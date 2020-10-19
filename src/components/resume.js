@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Grid, Cell } from 'react-mdl';
+import { Grid, Cell, Button } from 'react-mdl';
 
 import Education from './education';
 import Experience from './experience';
 import Skills from './skills';
+
+import ProfilePic from '../images/ProfilePic.jpg'
 
 
 class Resume extends Component{
@@ -14,23 +16,21 @@ class Resume extends Component{
               <Cell col={4}>
                 <div style={{textAlign: 'center'}}>
                   <img
-                    src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
-                    alt="avatar"
-                    style={{height: '200px'}}
+                    src={ProfilePic}
+                    style={{height: '350px', borderRadius: '15px'}}
                      />
                 </div>
     
-                <h2 style={{paddingTop: '2em'}}>Paul Hanna</h2>
+                <h2>Steven Li</h2>
                 <h4 style={{color: 'grey'}}>Programmer</h4>
                 <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                <p>Hi, thank you so much for checking out my website. To summarize, I am currently a sophomore at the University of Rochester
+                   double majoring in Computer Science and Economics. I've been very fortunate enough to have held some experience in the tech 
+                   industry already and I am looking forward to whatever challenges that lie ahead of me! Please checkout the "sparknotes"
+                   of my resume on the right, and if you're looking for more information, my full resume can be viewed with the button below!
+                </p>
                 <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-                <h5>Address</h5>
-                <p>1 Hacker Way Menlo Park, 94025</p>
-                <h5>Phone</h5>
-                <p>(123) 456-7890</p>
-                <h5>Email</h5>
-                <p>someone@example.com</p>
+                <Button raised colored>Full Resume</Button>
                 <h5>Web</h5>
                 <p>mywebsite.com</p>
                 <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
@@ -40,34 +40,32 @@ class Resume extends Component{
     
     
                 <Education
-                  startYear={2002}
-                  endYear={2006}
-                  schoolName="My University"
-                  schoolDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                  startYear={2019}
+                  endYear={2023}
+                  schoolName="University of Rochester"
                    />
     
                    <Education
-                     startYear={2007}
-                     endYear={2009}
-                     schoolName="My 2nd University"
-                     schoolDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                     startYear={2015}
+                     endYear={2019}
+                     schoolName="Deerfield Academy"
                       />
                     <hr style={{borderTop: '3px solid #e22947'}} />
     
                   <h2>Experience</h2>
     
                 <Experience
-                  startYear={2009}
-                  endYear={2012}
-                  jobName="First Job"
-                  jobDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                  startYear={2020}
+                  timeLength={'4 months'}
+                  jobName="Full Stack Internship"
+                  jobDescription="Worked @ S&C Electric on a team to develop a desktop application using Spring Boot with Java and React.js to monitor electrical devices"
                   />
     
                   <Experience
-                    startYear={2012}
-                    endYear={2016}
-                    jobName="Second Job"
-                    jobDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                    startYear={2018}
+                    timeLength={'2 months'}
+                    jobName="Software Project Internship"
+                    jobDescription="Worked with the quality assurance team and helped discover over 50 bugs, and aided with the release of project in late June"
                     />
                   <hr style={{borderTop: '3px solid #e22947'}} />
                   <h2>Skills</h2>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Grid, Cell} from 'react-mdl';
 
 
-import profilePic from '../images/ProfilePic.jpg';
+import HeadShot from '../images/HeadShot.jpeg';
 
 class Landing extends Component{
     render(){
@@ -13,10 +13,9 @@ class Landing extends Component{
                     <Grid className = "landing-grid">
                         <Cell col={12}>
                             <img 
-                                src = {profilePic}
-                                alt = "profile"
+                                src = {HeadShot}
                                 className = "profile-img"
-                                style = {{borderRadius: "15px", topPadding: '20px'}}
+                                style = {{borderRadius: "15px"}}
                             />
                             <div className = "banner-text">
                                 <h1>Software Developer</h1>

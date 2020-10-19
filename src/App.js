@@ -1,59 +1,37 @@
-import React, { useState } from 'react';
-
+import React, { Component } from 'react';
 import './App.css';
-
-import { HeaderRow, HeaderTabs, Tab, Layout, Header, Drawer, Content } from 'react-mdl';
-
+import { Layout, Header, Navigation, Drawer, Content, Button } from 'react-mdl';
 import Main from './components/main';
-
 import { Link } from 'react-router-dom';
 
-import ContactPage from './components/contact';
-import LandingPage from './components/landingpage';
-import ResumePage from './components/resume';
-import ProjectPage from './components/projects'
+class App extends Component {
+  render() {
+    return (
+      <div className="demo-big-content">
+    <Layout>
+        <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MyPortfolio</Link>} scroll>
+            <Navigation>
+                <Link to="/resume" style ={{textDecoration:'none', height: '100%', width: '100%'}}><Button style ={{color: 'white',height: '100%', width: '100%'}}ripple>Resume</Button></Link>
+                <Link to="/projects" style ={{textDecoration:'none', height: '100%', width: '100%'}}><Button style ={{color: 'white',height: '100%', width: '100%'}} ripple>Projects</Button></Link>
+                <Link to="/contact" style ={{textDecoration:'none', height: '100%', width: '100%'}}><Button style ={{color: 'white',height: '100%', width: '100%'}} ripple>Contact</Button></Link>
+            </Navigation>
+        </Header>
+        <Drawer title={<Link style={{textDecoration: 'none', color: 'black'}} to="/">MyPortfolio</Link>}>
+            <Navigation>
+              <Link to="/resume">Resume</Link>
+              <Link to="/projects">Projects</Link>
+              <Link to="/contact">Contact</Link>
+            </Navigation>
+        </Drawer>
+        <Content>
+            <div className="page-content" />
+            <Main/>
+        </Content>
+    </Layout>
+</div>
 
-function App() {
-    const [tab, setTab] = useState(0);
-
-    //silly way to use useState
-    const [project, setProject] = useState(false);
-    const [resume, setResume] = useState(false);
-    const [contact, setContact] = useState(false);
-
-    //landing page check
-    const [started, setStarted] = useState(true);
-
-    
-  return (
-        <div className = "demo-big-content" style={{height: '300px', position: 'relative'}}>
-            <Layout fixedHeader fixedTabs>
-                <Header className = "header-color">
-                    <HeaderRow title="Title" className = "header-color"/>
-                    <HeaderTabs className = "header-color" ripple activeTab={1} 
-                        onChange={(tabId) => {if(tabId == 0){
-                        setProject(true); setContact(false); setResume(false); setStarted(false);
-                    }else if(tabId == 1){
-                        setProject(false); setContact(true); setResume(false); setStarted(false); 
-                    }else if(tabId == 2){
-                        setProject(false); setContact(false); setResume(true); setStarted(false);
-                    }
-                    }}>
-                        <Tab>Projects</Tab>
-                        <Tab>About Me / Contact</Tab>
-                        <Tab>Resume</Tab>
-                    </HeaderTabs>
-                </Header>
-                <Drawer title="Title" />
-                <Content>
-                    { started ? <LandingPage/> : null}
-                    { project ? <ProjectPage/> : null }
-                    { resume ? <ResumePage/> : null }
-                    { contact ? <ContactPage/> : null }
-                </Content>
-            </Layout>
-        </div>
-  );
+    );
+  }
 }
 
 export default App;
