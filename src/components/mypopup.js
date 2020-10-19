@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button } from 'react-mdl';
 
-import TestResume from '../images/TestResume.jpg';
+import ProfilePic from '../images/ProfilePic.jpg';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -47,7 +47,7 @@ export default function MyPopup() {
   const body = (
     <div style={modalStyle} className={classes.paper}>
         <img
-            src={TestResume}
+            src={ProfilePic}
             style={{height: '400%', width: '100%'}}
         />
     </div>
