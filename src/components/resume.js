@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
 import { Grid, Cell, Button } from 'react-mdl';
 
+
+import MyPopup from './mypopup';
 import Education from './education';
 import Experience from './experience';
 import Skills from './skills';
 
-import ProfilePic from '../images/ProfilePic.jpg'
+import ProfilePic from '../images/ProfilePic.jpg';
 
 
 class Resume extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      seen: false
+    };
+  }
+
+  togglePop = () =>{
+    this.setState({
+      seen: !this.state.seen
+    })
+  }
+
     render(){
         return(
-            <div className = 'resume-body'>
+            <div className = {this.state.seen ? 'resume-bodyfaded' : 'resume-body'}>
             <Grid>
               <Cell col={4}>
                 <div style={{textAlign: 'center'}}>
@@ -30,15 +45,13 @@ class Resume extends Component{
                    of my resume on the right, and if you're looking for more information, my full resume can be viewed with the button below!
                 </p>
                 <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-                <Button raised colored>Full Resume</Button>
+                  <MyPopup />
                 <h5>Web</h5>
                 <p>mywebsite.com</p>
                 <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
               </Cell>
               <Cell className="resume-right-col" col={8}>
                 <h2>Education</h2>
-    
-    
                 <Education
                   startYear={2019}
                   endYear={2023}
@@ -68,25 +81,27 @@ class Resume extends Component{
                     jobDescription="Worked with the quality assurance team and helped discover over 50 bugs, and aided with the release of project in late June"
                     />
                   <hr style={{borderTop: '3px solid #e22947'}} />
-                  <h2>Skills</h2>
+                  <h2>Languages</h2>
                   <Skills
-                    skill="javascript"
-                    progress={100}
+                    skill="Java"
+                    progress={90}
                     />
-                    <Skills
-                      skill="HTML/CSS"
-                      progress={80}
-                      />
-                      <Skills
-                        skill="NodeJS"
-                        progress={50}
-                        />
-                        <Skills
-                          skill="React"
-                          progress={25}
-                          />
-    
-    
+                  <Skills
+                    skill="JavaScript"
+                    progress={80}
+                    />
+                  <Skills
+                    skill="Objective-C"
+                    progress={70}
+                    />
+                  <Skills
+                    skill="C *learning right now!*"
+                    progress={40}
+                    />
+                  <Skills
+                    skill="HTML/CSS"
+                    progress={80}
+                    />
               </Cell>
             </Grid>
           </div>
