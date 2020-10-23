@@ -47,7 +47,7 @@ class Resume extends Component{
                 <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
                   <MyPopup />
                 <h5>Web</h5>
-                <p>mywebsite.com</p>
+                <p>https://steven-li-portfolio.herokuapp.com/</p>
                 <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
               </Cell>
               <Cell className="resume-right-col" col={8}>
