@@ -5,6 +5,8 @@ import { Button } from 'react-mdl';
 
 import ProfilePic from '../images/ProfilePic.jpg';
 
+import ResumePic from '../images/Resume.jpg';
+
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -47,7 +49,7 @@ export default function MyPopup() {
   const body = (
     <div style={modalStyle} className={classes.paper}>
         <img
-            src={ProfilePic}
+            src={ResumePic}
             style={{height: '400%', width: '100%'}}
         />
     </div>
