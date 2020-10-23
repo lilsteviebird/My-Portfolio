@@ -23,6 +23,9 @@ class Projects extends Component {
               <a href="https://github.com/lilsteviebird/Simple-Snake-Game" rel = "noopener noferrer" target="_blank">
                 <Button colored>GitHub</Button>
               </a>
+              <a href="https://steven-li-simple-snake-game.herokuapp.com" rel = "noopener noferrer" target="_blank">
+                <Button colored>Check it Out!</Button>
+              </a>
             </CardActions>
             <CardMenu style={{color: '#fff'}}>
               <IconButton name="share" />
