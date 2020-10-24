@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button } from 'react-mdl';
 
-import ProfilePic from '../images/ProfilePic.jpg';
 
-import ResumePic from '../images/Resume.jpg';
+import ResumePic from '../images/ResumeUpdated.jpg';
+
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
